@@ -7,6 +7,7 @@ Group: 		Development/C
 Source: 	ftp://ftp.freestandards.org/pub/lsb/lsbdev/released-3.1.1/lsb-build-cc-%{version}.tar.bz2
 Patch0:         lsb-build-cc-3.1.1-fhs.patch
 URL:		http://www.linuxbase.org/build
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 Requires: 	lsb-build-base = %{version}
 Requires:	gcc gcc-c++
 Obsoletes: 	lsbdev-cc
