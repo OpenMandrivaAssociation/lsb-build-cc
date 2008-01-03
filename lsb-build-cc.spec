@@ -14,7 +14,6 @@ Obsoletes: 	lsbdev-cc
 Provides:	lsbdev-cc
 
 %description
-
 This package provides lsbcc and lsbc++, which is one of the approaches 
 that can be used to build LSB conforming applications.
 
