@@ -1,7 +1,7 @@
 Summary: 	LSB Build environment lsbcc package
 Name: 		lsb-build-cc
 Version: 	3.1.1
-Release: 	%mkrel 5
+Release: 	%mkrel 6
 License: 	LGPL
 Group: 		Development/C
 Source: 	ftp://ftp.freestandards.org/pub/lsb/lsbdev/released-3.1.1/lsb-build-cc-%{version}.tar.bz2
