@@ -1,0 +1,85 @@
+--- lsb-build-cc-3.1.1/build_env/lsbdev-cc/lsbcc.1.fhs	2006-01-21 01:44:56.000000000 +0100
++++ lsb-build-cc-3.1.1/build_env/lsbdev-cc/lsbcc.1	2006-06-13 16:37:34.000000000 +0200
+@@ -96,7 +96,7 @@ LSBCC_LIBS
+ Specifies the location of the LSB stub libraries that will
+ be linked against.  If this environment variable is not found,
+ the default 
+-.I /opt/lsb/lib
++.I /usr/lib/lsb-build-base
+ will be used.
+ .P
+ .TP
+@@ -104,7 +104,7 @@ LSBCC_INCLUDES
+ Specifies the location of the LSB header files that will
+ be linked against.  If this environment variable is not found,
+ the default 
+-.I /opt/lsb/include
++.I /usr/include/lsb-build-base
+ will be used.
+ .P
+ .TP
+@@ -112,7 +112,7 @@ LSBCXX_INCLUDES
+ Specifies the location of the LSB C++ header files that will
+ be linked against.  If this environment variable is not found,
+ the default 
+-.I /opt/lsb/include/c++
++.I /usr/include/lsb-build-base/c++
+ will be used.
+ .P
+ .TP
+@@ -170,10 +170,10 @@ as this form combines the option and arg
+ into a single word and avoids the issue.
+ .SH FILES
+ .TP
+-/opt/lsb/include
++/usr/include/lsb-build-base
+ the LSB header files
+ .TP
+-/opt/lsb/lib
++/usr/lib/lsb-build-base
+ the LSB stub libraries
+ .TP
+ /lib/ld-lsb.so.3
+--- lsb-build-cc-3.1.1/build_env/lsbdev-cc/lsbcc.c.fhs	2006-03-31 02:41:15.000000000 +0200
++++ lsb-build-cc-3.1.1/build_env/lsbdev-cc/lsbcc.c	2006-06-13 16:44:01.000000000 +0200
+@@ -11,8 +11,8 @@
+  * of the original shell script.
+  * 
+  * The basic premise is this: The LSB development environment provides
+- * a set of headers and libraries nominally found in /opt/lsb/include
+- * and /opt/lsb/lib respectively. These headers and libraries have
++ * a set of headers and libraries nominally found in /usr/include/lsb-build-base
++ * and /usr/lib/lsb-build-base respectively. These headers and libraries have
+  * been carefully built so that they contain only the interfaces provided by
+  * the LSB. And LSB conforming application must also use be linked with
+  * a special program intepreter (usually ld-lsb.so.3 but this is described
+@@ -101,7 +101,7 @@ int lsbccmode=LSBCC;
+  * environment variables.
+  */
+ #ifndef BASE_PATH
+-#define BASE_PATH "/opt/lsb"
++#define BASE_PATH "/usr"
+ #endif
+ 
+ char *ccname="cc";
+@@ -525,16 +525,16 @@ char	*ptr;
+ /*
+  * Set up the paths we will need
+  */
+-snprintf(incpath, PATH_MAX-1, "%s/%s", BASE_PATH, "include");
+-snprintf(cxxincpath, PATH_MAX-1, "%s/%s", BASE_PATH, "include/c++");
++snprintf(incpath, PATH_MAX-1, "%s/%s", BASE_PATH, "include/lsb-build-base");
++snprintf(cxxincpath, PATH_MAX-1, "%s/%s", BASE_PATH, "include/lsb-build-base/c++");
+ 
+ /*
+  * Set up the library path according to arch using lib64 where necessary
+  */
+ #if __powerpc64__ || __s390x__ || __x86_64__
+-	snprintf(libpath, PATH_MAX-1, "%s/%s", BASE_PATH, "lib64");
++	snprintf(libpath, PATH_MAX-1, "%s/%s", BASE_PATH, "lib64/lsb-build-base");
+ #else
+-	snprintf(libpath, PATH_MAX-1, "%s/%s", BASE_PATH, "lib");
++	snprintf(libpath, PATH_MAX-1, "%s/%s", BASE_PATH, "lib/lsb-build-base");
+ #endif
+ 
+ /*
