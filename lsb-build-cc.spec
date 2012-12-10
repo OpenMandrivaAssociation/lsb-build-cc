@@ -43,3 +43,47 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/lsbc++.1*
 %{_libdir}/libgcc34compat.a
 
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 3.1.1-7mdv2011.0
++ Revision: 620265
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 3.1.1-6mdv2010.0
++ Revision: 429874
+- rebuild
+
+* Mon Jul 28 2008 Thierry Vignaud <tv@mandriva.org> 3.1.1-5mdv2009.0
++ Revision: 251471
+- rebuild
+- fix spacing at top of description
+
+* Thu Jan 03 2008 Olivier Blin <oblin@mandriva.com> 3.1.1-3mdv2008.1
++ Revision: 140933
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Thu Jun 22 2006 Stew Benedict <sbenedict@mandriva.com> 3.1.1-3mdv2007.0
+- fix 64bit build
+
+* Tue Jun 13 2006 Stew Benedict <sbenedict@mandriva.com> 3.1.1-2mdv2007.0
+- fix requires, source path, P0
+
+* Mon Jun 12 2006 Stew Benedict <sbenedict@mandriva.com> 3.1.1-1mdv2007.0
+- 3.1.1, rediff P0
+
+* Wed Jun 08 2005 Stew Benedict <sbenedict@mandriva.com> 3.0.0-1mdk
+- 3.0.0 snapshot (not final)
+
+* Thu Aug 26 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.0.4-1mdk
+- 2.0.4
+
+* Mon Jul 26 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.0.3-1mdk
+- First Mandrakelinux packaging, move out of /opt (patch0)
+- man pages to correct dir
+- use doc macro, License, add URL
+
