@@ -13,6 +13,7 @@ Requires:	gcc gcc-c++
 Obsoletes: 	lsbdev-cc
 Provides:	lsbdev-cc
 
+BuildRequires:	make
 %description
 This package provides lsbcc and lsbc++, which is one of the approaches 
 that can be used to build LSB conforming applications.
